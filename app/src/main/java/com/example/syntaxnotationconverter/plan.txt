@@ -1,0 +1,11 @@
+
+for string in strings:
+    if string is in prefix and isValidPrefix:
+        prefixToInfix
+        prefixToPostfix
+    elif string is in postfix and isValidPostfix:
+        postfixToInfix
+        postfixToPrefix
+    elif string is in infix and isValidInfix:
+        infixToPrefix
+        infixToPostfix
