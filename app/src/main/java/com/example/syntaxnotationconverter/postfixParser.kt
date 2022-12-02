@@ -1,5 +1,12 @@
 package com.example.syntaxnotationconverter
 
+/*
+<expr> ::= <identifier><factor>
+<factor> ::= <identifier><factor><op><factor> | epsilon
+<op> ::= + | - | * | / | ^
+<identifier> ::= \d+ | [a-zA-Z]
+ */
+
 class PostfixParser(val s : String) {
     private var isValid : Boolean  = true
     private val tokenizer = Tokenizer(s)

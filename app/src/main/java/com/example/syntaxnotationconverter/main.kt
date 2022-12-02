@@ -9,14 +9,10 @@ fun main() {
 
     //2. Evaluate the expressions
 
-    val str = " ( 5 + 10 ) / ( 20 / 4 )"
+    val str = " ( 5 + 15 ) / (20 / 5)"
 
     println(eval(str))
-
-
 }
-
-
 
 fun convertNotation(s: String) {
     if (isSymbol(s[0])) {
@@ -63,9 +59,5 @@ fun isSymbol (s: Char) : Boolean {
 "A+B+C+D"
 "(A+B)*C"
 "a*(b+c/d)"
-""
-""
-""
-""
 "(a+(((b*c)-((d/(e^f))*g))*h))"
  */

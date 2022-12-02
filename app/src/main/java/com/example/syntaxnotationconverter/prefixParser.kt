@@ -1,6 +1,9 @@
 package com.example.syntaxnotationconverter
 
-
+/*
+<expr> ::= +| - | * | / | ^ | <identifier>
+<identifier> ::= \d+ | [a-zA-Z]
+ */
 class PrefixParser(val s : String) {
     private var isValid = true
     private val tokenizer = Tokenizer(s)

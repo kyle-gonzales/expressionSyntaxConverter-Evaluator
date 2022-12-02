@@ -62,26 +62,14 @@ private fun evalPrefix(s: String) : Double {
 
     while (t.hasNextInput()) {
         val inputToken = t.getNextInput()
-//        println(inputToken)
         if (inputToken.type == "OPERAND") {
-//            println("push: ${inputToken.value?.toDouble()}")
             operatorStack.push(inputToken.value?.toDouble())
-//            ?println("${inputToken.value} -> ${inputToken.value?.toDouble()}")
         } else if (inputToken.type == "(" || inputToken.type == ")") {
             continue
         } else {
-//            println("peek 1: ${operatorStack.peek()}")
             val a : Double = operatorStack.pop()
-//            println("peek : ${operatorStack.peek()}")
             val b : Double = operatorStack.pop()
             result = operation(a, b, inputToken.type)
-
-
-//            println("$a ${inputToken.type} $b")
-//            println(result)
-//            println()
-
-            
             operatorStack.push(result)
         }
     }
@@ -99,11 +87,10 @@ private fun operation(a : Double, b : Double, op : String) : Double {
         "SUBTRACT" -> return a - b
         "MULTIPLY" -> return a * b
         "DIVIDE" -> {
-            try {
+            if (b.toInt() == 0) {
+                throw Error("Division By Zero Error")
+            } else
                 return a / b
-            } catch (e : ArithmeticException) {
-                throw Error("Cannot Divide By Zero!")
-            }
         }
         "POWER" -> return a.pow(b)
         else -> throw Error("Invalid Operation")

@@ -12,7 +12,6 @@ class Tokenizer (s : String) {
     private var operandIsInt = false
 
     fun hasNextInput() : Boolean {
-//        println("cursor: $cursor")
         return cursor < s.length
     }
 
